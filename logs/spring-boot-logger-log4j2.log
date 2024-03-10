@@ -1,0 +1,46 @@
+2024-03-10 12:57:50,526 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-10 12:57:50,659 INFO o.s.b.StartupInfoLogger [main] Starting QuestionsHubApplication using Java 21.0.2 with PID 30568 (C:\Users\Utilisateur\IdeaProjects\questions-hub\target\classes started by Utilisateur in C:\Users\Utilisateur\IdeaProjects\questions-hub)
+2024-03-10 12:57:50,666 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-10 12:57:50,669 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-10 12:57:52,093 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-10 12:57:52,095 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-10 12:57:52,261 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 153 ms. Found 3 JPA repository interfaces.
+2024-03-10 12:57:52,282 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-10 12:57:52,283 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-10 12:57:52,304 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [main] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.questionshub.authentication.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-10 12:57:52,305 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [main] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.questionshub.question.repository.QuestionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-10 12:57:52,305 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [main] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.questionshub.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-10 12:57:52,306 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-03-10 12:57:53,306 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2024-03-10 12:57:53,328 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-10 12:57:53,332 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-10 12:57:53,333 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-10 12:57:53,435 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-10 12:57:53,437 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2683 ms
+2024-03-10 12:57:53,732 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-10 12:57:53,836 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-10 12:57:53,890 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-10 12:57:54,228 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-10 12:57:54,272 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-10 12:57:54,582 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6edd4fe2
+2024-03-10 12:57:54,585 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-10 12:57:54,633 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-10 12:57:55,924 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-10 12:57:55,992 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] SQL Warning Code: 0, SQLState: 00000
+2024-03-10 12:57:55,993 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] la contrainte « uk_ghpmfn23vmxfu3spu3lfg4r2d » de la relation « refresh_tokens » n'existe pas, ignore
+2024-03-10 12:57:55,996 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] SQL Warning Code: 0, SQLState: 00000
+2024-03-10 12:57:55,996 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] la contrainte « uk_7tdcd6ab5wsgoudnvj7xf1b7l » de la relation « refresh_tokens » n'existe pas, ignore
+2024-03-10 12:57:56,000 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] SQL Warning Code: 0, SQLState: 00000
+2024-03-10 12:57:56,000 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] la contrainte « uk_6dotkott2kjsp8vw4d0m25fb7 » de la relation « users » n'existe pas, ignore
+2024-03-10 12:57:56,011 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-10 12:57:56,501 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-10 12:57:57,176 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'jwtRequestFilter' configured for use
+2024-03-10 12:57:57,703 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-10 12:57:58,134 INFO o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@60e06e7e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@355c2b72, org.springframework.security.web.context.SecurityContextHolderFilter@2a0a654a, org.springframework.security.web.header.HeaderWriterFilter@75e00044, org.springframework.web.filter.CorsFilter@5bb0122, org.springframework.security.web.authentication.logout.LogoutFilter@19b8bcb5, com.example.questionshub.authentication.filter.JwtRequestFilter@42908ad5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12f1b76c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b7ee413, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74c0da40, org.springframework.security.web.session.SessionManagementFilter@536a0bbe, org.springframework.security.web.access.ExceptionTranslationFilter@4f7bc46e, org.springframework.security.web.access.intercept.AuthorizationFilter@306cb0a0]
+2024-03-10 12:57:58,818 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2024-03-10 12:57:58,843 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2024-03-10 12:57:58,857 INFO o.s.b.StartupInfoLogger [main] Started QuestionsHubApplication in 8.94 seconds (process running for 10.335)
+2024-03-10 12:58:51,896 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-10 12:58:51,897 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-10 12:58:51,898 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2024-03-10 15:38:24,049 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h4m28s833ms712µs500ns).
