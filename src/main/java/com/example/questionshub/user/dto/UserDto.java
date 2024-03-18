@@ -12,6 +12,5 @@ import java.util.UUID;
 public class UserDto {
     private UUID id;
     private String email;
-    private String mobileNumber;
     private String password;
 }

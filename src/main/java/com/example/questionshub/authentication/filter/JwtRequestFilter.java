@@ -1,9 +1,7 @@
 package com.example.questionshub.authentication.filter;
 
-import com.example.questionshub.authentication.services.ApplicationUserDetailsService;
+import com.example.questionshub.authentication.util.ApplicationUserDetailsUtil;
 import com.example.questionshub.authentication.util.JwtUtil;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.MalformedJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,7 +19,7 @@ import java.io.IOException;
 @Component
 @AllArgsConstructor
 public class JwtRequestFilter extends OncePerRequestFilter {
-    private final ApplicationUserDetailsService userDetailsService;
+    private final ApplicationUserDetailsUtil userDetailsService;
     private final JwtUtil jwtUtil;
 
     @Override

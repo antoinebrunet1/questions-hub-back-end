@@ -1,4 +1,4 @@
-package com.example.questionshub.authentication.services;
+package com.example.questionshub.authentication.util;
 
 import com.example.questionshub.authentication.models.UserPrincipal;
 import com.example.questionshub.user.entity.UserEntity;
@@ -16,7 +16,7 @@ import java.security.NoSuchAlgorithmException;
 
 @Service
 @AllArgsConstructor
-public class ApplicationUserDetailsService implements UserDetailsService {
+public class ApplicationUserDetailsUtil implements UserDetailsService {
     private final UserService userService;
 
     @Override

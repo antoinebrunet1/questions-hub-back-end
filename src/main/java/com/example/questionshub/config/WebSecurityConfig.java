@@ -1,7 +1,7 @@
 package com.example.questionshub.config;
 
 import com.example.questionshub.authentication.filter.JwtRequestFilter;
-import com.example.questionshub.authentication.services.ApplicationUserDetailsService;
+import com.example.questionshub.authentication.util.ApplicationUserDetailsUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity
 @AllArgsConstructor
 public class WebSecurityConfig {
-    private final ApplicationUserDetailsService userDetailsService;
+    private final ApplicationUserDetailsUtil userDetailsService;
     private final JwtRequestFilter jwtFilter;
 
     @Bean

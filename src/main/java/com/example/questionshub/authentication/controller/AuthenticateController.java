@@ -3,9 +3,10 @@ package com.example.questionshub.authentication.controller;
 import com.example.questionshub.authentication.models.AuthenticationRequest;
 import com.example.questionshub.authentication.models.MessageResponse;
 import com.example.questionshub.authentication.models.RefreshTokenEntity;
-import com.example.questionshub.authentication.services.ApplicationUserDetailsService;
-import com.example.questionshub.authentication.services.RefreshTokenService;
+import com.example.questionshub.authentication.util.ApplicationUserDetailsUtil;
+import com.example.questionshub.authentication.service.RefreshTokenService;
 import com.example.questionshub.authentication.util.JwtUtil;
+import com.example.questionshub.authentication.util.RefreshTokenUtil;
 import com.example.questionshub.user.entity.UserEntity;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
@@ -21,12 +22,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/auth")
 @AllArgsConstructor
 class AuthenticateController {
-    private final ApplicationUserDetailsService userDetailsService;
+    private final ApplicationUserDetailsUtil userDetailsService;
     private final RefreshTokenService refreshTokenService;
     private final JwtUtil jwtUtil;
+    private final RefreshTokenUtil refreshTokenUtil;
 
     @RequestMapping(value = "/authenticate")
     @ResponseStatus(HttpStatus.CREATED)
@@ -41,11 +42,11 @@ class AuthenticateController {
 
         UserDetails userDetails = userDetailsService.loadUserByUsername(user.getEmail());
         String jwt = jwtUtil.generateToken(userDetails);
-        ResponseCookie jwtCookie = refreshTokenService.getJwtCookie(jwt);
+        ResponseCookie jwtCookie = refreshTokenUtil.getJwtCookie(jwt);
         UUID userId = user.getId();
         refreshTokenService.deleteRefreshTokenByUserIdOrElseThrow(userId);
         String refreshToken = refreshTokenService.generateRefreshToken(userId).getToken();
-        ResponseCookie refreshTokenCookie = refreshTokenService.getRefreshTokenCookie(refreshToken);
+        ResponseCookie refreshTokenCookie = refreshTokenUtil.getRefreshTokenCookie(refreshToken);
 
         return ResponseEntity
                 .ok()
@@ -56,20 +57,20 @@ class AuthenticateController {
 
     @PostMapping("/refreshToken")
     public ResponseEntity<?> refreshToken(HttpServletRequest request) throws BadRequestException {
-        String refreshToken = refreshTokenService.getRefreshTokenFromCookies(request);
+        String refreshToken = refreshTokenUtil.getRefreshTokenFromCookies(request);
         RefreshTokenEntity refreshTokenEntity = refreshTokenService.findByRefreshTokenOrElseThrow(refreshToken);
 
-        refreshTokenService.verifyExpiration(refreshTokenEntity);
+        refreshTokenUtil.verifyExpiration(refreshTokenEntity);
 
         UserEntity user = refreshTokenEntity.getUser();
 
         UserDetails userDetails = userDetailsService.loadUserByUsername(user.getEmail());
         String jwt = jwtUtil.generateToken(userDetails);
-        ResponseCookie jwtCookie = refreshTokenService.getJwtCookie(jwt);
+        ResponseCookie jwtCookie = refreshTokenUtil.getJwtCookie(jwt);
         UUID userId = user.getId();
         refreshTokenService.deleteRefreshTokenByUserIdOrElseThrow(userId);
         String newRefreshToken = refreshTokenService.generateRefreshToken(userId).getToken();
-        ResponseCookie refreshTokenCookie = refreshTokenService.getRefreshTokenCookie(newRefreshToken);
+        ResponseCookie refreshTokenCookie = refreshTokenUtil.getRefreshTokenCookie(newRefreshToken);
 
         return ResponseEntity
                 .ok()
